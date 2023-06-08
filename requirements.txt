@@ -1,4 +1,5 @@
 django==3.2.15
+flake8==4.0.1
 pytils==0.4.1
 pytest==7.1.3
 pytest-django==4.5.2

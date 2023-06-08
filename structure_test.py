@@ -11,8 +11,8 @@ ya_note_tests = BASE_DIR / 'ya_note/notes/tests/'
 ya_news_tests = BASE_DIR / 'ya_news/news/pytest_tests/'
 
 message_template = (
-    '\nНе обнаружены тесты для проекта `{project}`. Убедитесь, что написанные '
-    'вами тесты перенесены в директорию `{path}`.'
+    '\nНе обнаружены тесты для проекта `{project}`. Убедитесь, что тесты, '
+    'которые вы написали, размещены в директории `{path}`.'
 )
 
 projects_map = {
