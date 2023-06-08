@@ -81,7 +81,7 @@ def test_author_can_edit_comment(
         comment,
         pk_comment_for_args,
         pk_news_for_args
-        ):
+):
     # Получаем адрес страницы редактирования:
     url = reverse('news:edit', args=pk_comment_for_args)
     url_success = reverse('news:detail', args=pk_news_for_args)
@@ -102,7 +102,7 @@ def test_other_user_cant_edit_comment(
         form_data,
         comment,
         pk_comment_for_args
-        ):
+):
     url = reverse('news:edit', args=pk_comment_for_args)
     response = admin_client.post(url, form_data)
     # Проверяем, что страница не найдена:
@@ -118,7 +118,7 @@ def test_author_can_delete_comment(
         author_client,
         pk_comment_for_args,
         pk_news_for_args
-        ):
+):
     # вывожу кол-во комментов до удаления
     print(Comment.objects.count())
     url = reverse('news:delete', args=pk_comment_for_args)
@@ -133,7 +133,7 @@ def test_other_user_cant_delete_note(
         admin_client,
         pk_comment_for_args,
         pk_news_for_args
-        ):
+):
     url = reverse('news:delete', args=pk_comment_for_args)
     response = admin_client.post(url)
     assert response.status_code == HTTPStatus.NOT_FOUND

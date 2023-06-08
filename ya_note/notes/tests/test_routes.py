@@ -117,4 +117,4 @@ class TestRoutes(TestCase):
             with self.subTest(name=name):
                 url = reverse(name)
                 response = self.client.get(url)
-                self.assertEqual(response.status_code,  HTTPStatus.OK)
+                self.assertEqual(response.status_code, HTTPStatus.OK)

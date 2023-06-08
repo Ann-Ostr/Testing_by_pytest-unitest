@@ -94,7 +94,7 @@ class TestNoteEditDelete(TestCase):
             'title': cls.NEW_TITLE_TEXT,
             'slug': 'new-slug',
             'author': cls.author
-            }
+        }
 
     # п.2 Невозможно создать две заметки с одинаковым slug
     # Вызываем фикстуру отдельной заметки, чтобы в базе появилась запись.

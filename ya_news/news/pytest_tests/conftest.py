@@ -67,7 +67,7 @@ def news_eleven():
             # Для каждой новости уменьшаем дату на index дней от today,
             # где index - счётчик цикла.
             date=today - timedelta(days=index)
-            )
+        )
         all_news.append(news)
     News.objects.bulk_create(all_news)
     return all_news
