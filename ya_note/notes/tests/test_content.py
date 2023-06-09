@@ -15,8 +15,6 @@ class TestDetailPage(TestCase):
     def setUpTestData(cls):
         cls.author = User.objects.create(username='Автор')
         cls.reader = User.objects.create(username='Другой Автор')
-        # cls.auth_client = Client()
-        # cls.auth_client.force_login(cls.author)
         cls.note = Note.objects.create(
             title='Заголовок заметки',
             text='Просто текст заметки.',

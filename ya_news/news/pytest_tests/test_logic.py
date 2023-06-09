@@ -119,8 +119,6 @@ def test_author_can_delete_comment(
         pk_comment_for_args,
         pk_news_for_args
 ):
-    # вывожу кол-во комментов до удаления
-    print(Comment.objects.count())
     url = reverse('news:delete', args=pk_comment_for_args)
     url_success = reverse('news:detail', args=pk_news_for_args)
     response = author_client.post(url)

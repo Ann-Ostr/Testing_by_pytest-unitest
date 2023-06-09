@@ -49,10 +49,15 @@ def test_comments_order(client, pk_news_for_args):
     news = response.context['news']
     # Получаем все комментарии к новости.
     all_comments = news.comment_set.all()
-    # Проверяем, что время создания первого комментария в списке
-    # меньше, чем время создания второго.
-    assert (all_comments[0].created
-            <= all_comments[1].created <= all_comments[2].created)
+    # Вытаскиваем даты создания комментариев
+    # и формируем список без списочных выражений
+    all_dates_comments = []
+    for date_comments in all_comments:
+        all_dates_comments.append(date_comments.created)
+    # Сортируем полученный список по убыванию.
+    sorted_dates_comments = sorted(all_dates_comments)
+    # Проверяем, что исходный список был отсортирован правильно.
+    assert all_dates_comments == sorted_dates_comments
 
 
 # п.4 Анонимному пользователю недоступна форма для отправки комментария
